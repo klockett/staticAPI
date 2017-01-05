@@ -29,6 +29,16 @@ afterEach(function(){
           .expect('Content-Type', /json/)
           .expect(200,{'healthy': true} ,done);
 
+});
+
+      it('/user/id should return a user obj with id.', function testHealth(done){
+        request(server)
+        .get('/api/user/347')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(200, {user:{id: 347}} ,done);
+
+
 
     });
   });

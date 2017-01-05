@@ -1,13 +1,9 @@
 module.exports = function (express) {
   var router = express.Router();
-
-router.get('/', function(req, res){
-     res.json({hello: 'world'});
-});
-
-router.get('/status', function(req, res){
-     res.json({healthy: true});
-});
-
+  router.post('/', function(req, res){
+    const shortener = require('../src/shortener');
+    req.body.shortend_url = returnStringGen(6);
+       res.json({shortend_url: req.body.shortened_url});
+  });
   return router;
 }
