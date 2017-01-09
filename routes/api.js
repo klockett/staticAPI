@@ -1,9 +1,21 @@
 module.exports = function (express) {
   var router = express.Router();
-  router.post('/', function(req, res){
+var shortened_url = shortened_url;
+
+
+
+
+
+
+
+
+  router.post("/urls",(req, res)=> {
+  //  res.json({hi:true});
     const shortener = require('../src/shortener');
-    req.body.shortend_url = returnStringGen(6);
-       res.json({shortend_url: req.body.shortened_url});
+    res.json({
+    //  orig_url: req.body.shortened_url,
+    shortened_url: shortener.stringGen(6)
   });
+});
   return router;
-}
+};
