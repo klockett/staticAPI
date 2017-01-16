@@ -14,8 +14,6 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER,process
   },
   logging: false,
 
-
-
 });
 //mysql table
 const url = sequelize.define('url', {
@@ -25,8 +23,6 @@ const url = sequelize.define('url', {
     orig_url: {
           type: Sequelize.STRING,
       }
-
-
 
 });
 

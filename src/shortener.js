@@ -10,10 +10,7 @@ function returnStringGen(){
     var rand = Math.round(Math.random() * (strSource.length- 1));
     strReturn += strSource.charAt(rand);
 
-
-
-  }
-
+}
 //stringGen
 
 
