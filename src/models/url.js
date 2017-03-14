@@ -23,9 +23,6 @@ exports.find = (payload, err, success) => {
 }
 
 
-
-
-
 exports.destroy = (payload, err, success) => {
     db.url.destroy({
       where:{

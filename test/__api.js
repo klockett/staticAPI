@@ -1,6 +1,7 @@
 var request = require('supertest');
+var shortened_url = shortened_url;
 
-describe('API', function(){
+describe('/urls', function(){
   var server;
 
 beforeEach(function(){
@@ -18,27 +19,7 @@ afterEach(function(){
       .get('/api/')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200,{'hello': 'world'} ,done);
+      .expect(200,{'shortened_url': shortener.stringGen(6)} ,done);
 
 });
-
-        it('Status should return specified healthy:true.', function testHealth(done){
-          request(server)
-          .get('/api/status')
-          .set('Accept', 'application/json')
-          .expect('Content-Type', /json/)
-          .expect(200,{'healthy': true} ,done);
-
-});
-
-      it('/user/id should return a user obj with id.', function testHealth(done){
-        request(server)
-        .get('/api/user/347')
-        .set('Accept', 'application/json')
-        .expect('Content-Type', /json/)
-        .expect(200, {user:{id: 347}} ,done);
-
-
-
-    });
   });
